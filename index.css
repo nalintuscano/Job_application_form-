@@ -1,0 +1,171 @@
+/* --- Global Styles: Typography and Background --- */
+body {
+    font-family: 'Poppins', sans-serif; /* Clean, modern typeface */
+    /* Light, soft gradient background with a subtle diagonal texture */
+    background: #e0e5ec; 
+    background-image: 
+        linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0.2)),
+        linear-gradient(45deg, rgba(255,255,255,0.2) 25%, transparent 25%, transparent 75%, rgba(255,255,255,0.2) 75%, rgba(255,255,255,0.2));
+    background-size: 10px 10px; /* Controls the size of the subtle grid pattern */
+    color: #4a4a4a;
+    margin: 0;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #4c5270; /* Muted, sophisticated blue-grey */
+    margin-bottom: 5px;
+    font-weight: 700;
+    font-size: 2.8em;
+    letter-spacing: 1.5px;
+}
+
+p {
+    color: #6a6e8b;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+/* --- Form Container Styles: Neumorphic Card --- */
+.fs-form {
+    background-color: #e0e5ec;
+    border-radius: 25px; 
+    /* The core Neumorphism shadow effect: soft light and dark edges */
+    box-shadow: 
+        9px 9px 16px rgba(163, 177, 198, 0.6), /* Dark, offset shadow */
+        -9px -9px 16px rgba(255, 255, 255, 0.8); /* Light, inverse shadow */
+    padding: 50px;
+    width: 100%;
+    max-width: 950px; 
+    margin-bottom: 50px;
+    transition: all 0.3s ease;
+}
+
+/* --- Fieldset and Legend (Section Headers) --- */
+fieldset {
+    border: none;
+    border-radius: 18px;
+    padding: 30px;
+    margin-bottom: 40px;
+    background-color: #e0e5ec; 
+    /* Inner Neumorphic press effect */
+    box-shadow: 
+        inset 6px 6px 10px rgba(163, 177, 198, 0.4), 
+        inset -6px -6px 10px rgba(255, 255, 255, 0.7); 
+}
+
+.fs-fieldset-title {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #007bff; 
+    padding: 0 15px;
+    margin-left: -15px;
+    margin-bottom: 25px;
+    border-left: 5px solid #007bff; 
+    display: block;
+}
+
+/* --- Layout (Responsive Grid) --- */
+.fs-layout__3-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; 
+}
+
+textarea {
+    grid-column: 1 / -1; 
+}
+
+/* --- Field Elements (Labels and Inputs) --- */
+.fs-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px; 
+}
+
+.fs-label {
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #4c5270;
+    font-size: 0.9em;
+}
+
+.fs-input, 
+select, 
+textarea {
+    padding: 12px 15px; 
+    border: none; /* No visible border for the neumorphic look */
+    border-radius: 12px; 
+    font-size: 1em;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #e0e5ec;
+    /* Default input state: Soft inner shadow (pressed look) */
+    box-shadow: 
+        inset 2px 2px 5px rgba(163, 177, 198, 0.6),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.8);
+    transition: all 0.2s ease;
+}
+
+.fs-input:focus, 
+select:focus, 
+textarea:focus {
+    /* Focus state: Remove inner shadow, add a subtle border ring */
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+    background-color: #f0f5fa; /* Slightly brighter focus background */
+}
+
+/* Custom styling for select dropdowns */
+select {
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="%23007bff" d="M6 9l-4-4h8l-4 4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 35px;
+}
+
+/* --- Submit Button Styling: The Pop Out Effect --- */
+input[type="submit"] {
+    background-color: #007bff !important; /* Blue primary action color */
+    color: white !important;
+    padding: 15px 40px !important;
+    border: none !important;
+    border-radius: 50px !important; 
+    font-weight: 700 !important;
+    font-size: 1.2em !important;
+    margin-top: 40px;
+    width: auto;
+    /* Soft 3D lift effect for the button */
+    box-shadow: 
+        4px 4px 8px rgba(0, 0, 0, 0.2), 
+        -4px -4px 8px rgba(255, 255, 255, 0.5);
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3 !important; /* Darker blue on hover */
+    transform: translateY(-2px); 
+    box-shadow: 
+        6px 6px 12px rgba(0, 0, 0, 0.25), 
+        -6px -6px 12px rgba(255, 255, 255, 0.6);
+}
+
+/* Button Active/Click State (Gives a "Press" Feedback) */
+input[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 
+        inset 2px 2px 5px rgba(0, 0, 0, 0.3),
+        inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+}
+
+/* --- Utility/Fixes --- */
+br {
+    display: none;
+}
